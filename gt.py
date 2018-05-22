@@ -59,5 +59,17 @@ big_gov_dir = "/sys/devices/system/cpu/cpu2/cpufreq/%s" % big_gov
 big_tunables = (os.listdir(big_gov_dir))
 #big cpu governor tunables are stored in 'big_tunables'
 
+print('Choose a profile')
+prRed('1 - Battery')
+prCyan('2 - Balanced')
+prGreen('3 - Performance')
+choice = input('>')
 
-
+if choice == '1':
+    fn1()
+elif choice == '2':
+    fn2()
+elif choice == '3':
+    fn3()
+else:
+    print('Enter a valid input value')
