@@ -25,37 +25,23 @@ prGreen('              | |')
 prGreen('              | |')
 prGreen('              |_|')
 
-with open("/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies", "r") as a
+def file_contents(x, y):
+   a = open(x, "r")
    b = a.read()
-   little_freq = b.split()
-   print(little_freq)
-del a
-del b
-#little_CPU frequencies are stored in 'little_freq'
+   y = b.split()
+   return(y)
+   x.close()
+   del a, b, y
 
-with open("/sys/devices/system/cpu/cpu2/cpufreq/scaling_available_frequencies", "r") as a
-   b = a.read()
-   big_freq = b.split()
-   print(big_freq)
-del a
-del b
-#big_CPU frequencies are stored in 'big_freq'
+little_freq = (file_contents("/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies", "z"))
 
-with open("/sys/devices/system/cpu/cpu2/cpufreq/scaling_governor", "r") as a
-   b = a.read()
-   big_gov = b.split()
-   print(big_gov)
-del a
-del b
-#big cpu scaling governor is stored in 'big_gov'
+little_gov = (file_contents("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor", "z"))
 
-with open("/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor", "r") as a
-   b = a.read()
-   little_gov = b.split()
-   print(little_gov)
-del a
-del b
-#little cpu scaling governor is stored in 'little_gov'
+big_freq = (file_contents("/sys/devices/system/cpu/cpu2/cpufreq/scaling_available_frequencies", "z"))
+
+big_gov = (file_contents("/sys/devices/system/cpu/cpu2/cpufreq/scaling_governor", "z"))
+
+
 
 import os
 little_gov_dir = "/sys/devices/system/cpu/cpu0/cpufreq/%s" % little_gov
