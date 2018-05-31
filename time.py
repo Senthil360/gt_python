@@ -1,6 +1,11 @@
 #This file will be intergrated into gt.py
 #The objective of this code is to obtain time_in_state of the CPU and adjust target loads accordingly with the help of an algorithm
 
+import math #for future functions
+
+def takeSecond(elem):
+   return elem[1]
+
 a = open("time_in_state", "r")
 b = a.read()
 a.close()
@@ -26,9 +31,12 @@ count=0
 
 while count < c:
    g.append([])
-   g[count].append(e[count])
-   g[count].append(f[count])
+   g[count].append(int(e[count]))
+   g[count].append(int(f[count]))
    count = count+1
 
-print(g)
+h = sorted(g, key=takeSecond)
+
+
+   
    
