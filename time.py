@@ -37,6 +37,22 @@ while count < c:
 
 h = sorted(g, key=takeSecond)
 
+del a, b, c, d, e, f
+
+def findSlope():
+   d=[]
+   e=0
+   f=1
+   while f < len(g):
+      d.append(int(g[f][1]-g[e][1])/(g[f][0]-g[e][0]))
+      e=e+1
+      f=f+1
+   return d
+
+print(findSlope())
+
+
+   
 
    
    
