@@ -6,6 +6,12 @@ import math #for future functions
 def takeSecond(elem):
    return elem[1]
 
+def eraseFirstLast(any_1d_list):
+    del x[0]
+    del x[-1]
+    return x
+   
+
 a = open("time_in_state", "r")
 b = a.read()
 a.close()
@@ -48,8 +54,26 @@ def findSlope():
       e=e+1
       f=f+1
    return d
+   del e, f
 
-print(findSlope())
+
+d=findSlope()
+x=eraseFirstLast(d)
+
+a=0
+y=[]
+while a < len(x):
+   y.append([])
+   y[a].append(int(a))
+   y[a].append(float(x[a]))
+   a=a+1
+
+z=sorted(y, key=takeSecond)
+
+print(z)
+
+
+
 
 
    
