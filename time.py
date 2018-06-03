@@ -7,9 +7,9 @@ def takeSecond(elem):
    return elem[1]
 
 def eraseFirstLast(any_1d_list):
-    del x[0]
-    del x[-1]
-    return x
+    del any_1d_list[0]
+    del any_1d_list[-1]
+    return any_1d_list
    
 
 a = open("time_in_state", "r")
